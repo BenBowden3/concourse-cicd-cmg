@@ -15,6 +15,7 @@ services:
     privileged: true
     depends_on: [concourse-db]
     ports: ["8080:8080"]
+    dns: 1.1.1.1
     environment:
       CONCOURSE_POSTGRES_HOST: concourse-db
       CONCOURSE_POSTGRES_USER: concourse_user
