@@ -1,6 +1,6 @@
 {
-  "region": "us-east-2",
-  "stateBucket": "concourse-pipeline-demo",
+  "region": "us-east-1",
+  "stateBucket": "concourse-pipeline-cmg",
   "tfStateKey": "tfstate",
   "allowedAccountIds": ["005901988046"],
   "roleArn": "arn:aws:iam::005901988046:role/fidelity-cicd-demo"
