@@ -24,8 +24,10 @@ jobs:
           image_resource:
             type: docker-image
             source:
-              repository: jednaszewski/concourse-worker
+              repository: 005901988046.dkr.ecr.us-east-1.amazonaws.com:443/concourse-worker
               tag: latest
+              aws_access_key_id: ((aws_access_key_id))
+              aws_secret_access_key: ((aws_secret_access_key))
           run:
             dir: source/kinesisToDynamo
             path: make
@@ -48,8 +50,10 @@ jobs:
           image_resource:
             type: docker-image
             source:
-              repository: jednaszewski/concourse-worker
+            repository: 005901988046.dkr.ecr.us-east-1.amazonaws.com:443/concourse-worker
               tag: latest
+              aws_access_key_id: ((aws_access_key_id))
+              aws_secret_access_key: ((aws_secret_access_key))
           run:
             dir: source/kinesisToDynamo/infrastructure
             path: make
@@ -66,8 +70,10 @@ jobs:
           image_resource:
             type: docker-image
             source:
-              repository: jednaszewski/concourse-worker
+              repository: 005901988046.dkr.ecr.us-east-1.amazonaws.com:443/concourse-worker
               tag: latest
+              aws_access_key_id: ((aws_access_key_id))
+              aws_secret_access_key: ((aws_secret_access_key))
           run:
             dir: source/kinesisToDynamo/lambda
             path: make
@@ -89,8 +95,10 @@ jobs:
           image_resource:
             type: docker-image
             source:
-              repository: jednaszewski/concourse-worker
+              repository: 005901988046.dkr.ecr.us-east-1.amazonaws.com:443/concourse-worker
               tag: latest
+              aws_access_key_id: ((aws_access_key_id))
+              aws_secret_access_key: ((aws_secret_access_key))
           run:
             dir: source/kinesisToDynamo/lambda
             path: make
@@ -112,8 +120,10 @@ jobs:
           image_resource:
             type: docker-image
             source:
-              repository: jednaszewski/concourse-worker
+              repository: 005901988046.dkr.ecr.us-east-1.amazonaws.com:443/concourse-worker
               tag: latest
+              aws_access_key_id: ((aws_access_key_id))
+              aws_secret_access_key: ((aws_secret_access_key))
           run:
             dir: source/kinesisToDynamo/lambda
             path: make
@@ -134,8 +144,10 @@ jobs:
           image_resource:
             type: docker-image
             source:
-              repository: jednaszewski/concourse-worker
+              repository: 005901988046.dkr.ecr.us-east-1.amazonaws.com:443/concourse-worker
               tag: latest
+              aws_access_key_id: ((aws_access_key_id))
+              aws_secret_access_key: ((aws_secret_access_key))
           run:
             dir: source/kinesisToDynamo/functional_tests
             path: make
@@ -161,8 +173,10 @@ jobs:
           image_resource:
             type: docker-image
             source:
-              repository: jednaszewski/concourse-worker
+              repository: 005901988046.dkr.ecr.us-east-1.amazonaws.com:443/concourse-worker
               tag: latest
+              aws_access_key_id: ((aws_access_key_id))
+              aws_secret_access_key: ((aws_secret_access_key))
           run:
             dir: source/s3ToDynamo
             path: make
@@ -185,8 +199,10 @@ jobs:
           image_resource:
             type: docker-image
             source:
-              repository: jednaszewski/concourse-worker
+              repository: 005901988046.dkr.ecr.us-east-1.amazonaws.com:443/concourse-worker
               tag: latest
+              aws_access_key_id: ((aws_access_key_id))
+              aws_secret_access_key: ((aws_secret_access_key))
           run:
             dir: source/s3ToDynamo/infrastructure
             path: make
@@ -203,8 +219,10 @@ jobs:
           image_resource:
             type: docker-image
             source:
-              repository: jednaszewski/concourse-worker
+              repository: 005901988046.dkr.ecr.us-east-1.amazonaws.com:443/concourse-worker
               tag: latest
+              aws_access_key_id: ((aws_access_key_id))
+              aws_secret_access_key: ((aws_secret_access_key))
           run:
             dir: source/s3ToDynamo/lambda
             path: make
@@ -226,8 +244,10 @@ jobs:
           image_resource:
             type: docker-image
             source:
-              repository: jednaszewski/concourse-worker
+              repository: 005901988046.dkr.ecr.us-east-1.amazonaws.com:443/concourse-worker
               tag: latest
+              aws_access_key_id: ((aws_access_key_id))
+              aws_secret_access_key: ((aws_secret_access_key))
           run:
             dir: source/s3ToDynamo/lambda
             path: make
@@ -249,8 +269,10 @@ jobs:
           image_resource:
             type: docker-image
             source:
-              repository: jednaszewski/concourse-worker
+              repository: 005901988046.dkr.ecr.us-east-1.amazonaws.com:443/concourse-worker
               tag: latest
+              aws_access_key_id: ((aws_access_key_id))
+              aws_secret_access_key: ((aws_secret_access_key))
           run:
             dir: source/s3ToDynamo/lambda
             path: make
@@ -271,8 +293,10 @@ jobs:
           image_resource:
             type: docker-image
             source:
-              repository: jednaszewski/concourse-worker
+              repository: 005901988046.dkr.ecr.us-east-1.amazonaws.com:443/concourse-worker
               tag: latest
+              aws_access_key_id: ((aws_access_key_id))
+              aws_secret_access_key: ((aws_secret_access_key))
           run:
             dir: source/s3ToDynamo/functional_tests
             path: make
