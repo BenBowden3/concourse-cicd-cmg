@@ -2,7 +2,7 @@ resources:
   - name: source
     type: git
     source:
-      uri: https://github.com/candidpartners/concourse-cicd-demo.git
+      uri: https://github.com/candidpartners/concourse-cicd-cmg.git
 
 jobs:
   - name: kinesisToDynamo

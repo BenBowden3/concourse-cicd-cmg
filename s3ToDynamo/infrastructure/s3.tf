@@ -7,7 +7,7 @@ resource "aws_s3_bucket" "ingest" {
     Environment = "${var.environment}"
   }
 
-  server_side_encryption_configuration {
+  /* server_side_encryption_configuration {
     rule {
       apply_server_side_encryption_by_default {
         kms_master_key_id = var.kmsKey
@@ -15,7 +15,7 @@ resource "aws_s3_bucket" "ingest" {
       }
     }
   }
-}
+} */
 
 # Allow lambda to read, list, and delete.  Allow deploy role full access
 resource "aws_s3_bucket_policy" "ingest-bucket-policy" {
