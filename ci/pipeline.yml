@@ -180,8 +180,8 @@ jobs:
           run:
             dir: source/s3mover
             path: make
-            args:
-              - settings
+      #      args:
+      #        - settings
 
       - task: infrastructure-deploy
         params:
@@ -207,27 +207,27 @@ jobs:
             dir: source/s3mover/infrastructure
             path: make
 
-      - task: lambda-test
-        params:
-          ENV: ((environment))
-          PIPELINE: 1
-        config:
-          platform: linux
-          inputs:
-            - name: source
-            - name: settings
-          image_resource:
-            type: docker-image
-            source:
-              repository: 005901988046.dkr.ecr.us-east-1.amazonaws.com:443/concourse-worker
-              tag: latest
-              aws_access_key_id: ((aws_access_key_id))
-              aws_secret_access_key: ((aws_secret_access_key))
-          run:
-            dir: source/s3mover/lambda
-            path: make
-            args:
-              - test
+      # - task: lambda-test
+      #   params:
+      #     ENV: ((environment))
+      #     PIPELINE: 1
+      #   config:
+      #     platform: linux
+      #     inputs:
+      #       - name: source
+      #       - name: settings
+      #     image_resource:
+      #       type: docker-image
+      #       source:
+      #         repository: 005901988046.dkr.ecr.us-east-1.amazonaws.com:443/concourse-worker
+      #         tag: latest
+      #         aws_access_key_id: ((aws_access_key_id))
+      #         aws_secret_access_key: ((aws_secret_access_key))
+      #     run:
+      #       dir: source/s3mover/lambda
+      #       path: make
+      #       args:
+      #         - test
 
       - task: lambda-build
         params:
@@ -251,53 +251,53 @@ jobs:
           run:
             dir: source/s3mover/lambda
             path: make
-            args:
-              - build
+            # args:
+            #   - build
 
-      - task: lambda-deploy
-        params:
-          ENV: ((environment))
-          PIPELINE: 1
-          AWS_ACCESS_KEY_ID: ((aws_access_key_id))
-          AWS_SECRET_ACCESS_KEY: ((aws_secret_access_key))
-        config:
-          platform: linux
-          inputs:
-            - name: settings
-            - name: build
-            - name: source
-          image_resource:
-            type: docker-image
-            source:
-              repository: 005901988046.dkr.ecr.us-east-1.amazonaws.com:443/concourse-worker
-              tag: latest
-              aws_access_key_id: ((aws_access_key_id))
-              aws_secret_access_key: ((aws_secret_access_key))
-          run:
-            dir: source/s3mover/lambda
-            path: make
-            args:
-              - deploy
+      # - task: lambda-deploy
+      #   params:
+      #     ENV: ((environment))
+      #     PIPELINE: 1
+      #     AWS_ACCESS_KEY_ID: ((aws_access_key_id))
+      #     AWS_SECRET_ACCESS_KEY: ((aws_secret_access_key))
+      #   config:
+      #     platform: linux
+      #     inputs:
+      #       - name: settings
+      #       - name: build
+      #       - name: source
+      #     image_resource:
+      #       type: docker-image
+      #       source:
+      #         repository: 005901988046.dkr.ecr.us-east-1.amazonaws.com:443/concourse-worker
+      #         tag: latest
+      #         aws_access_key_id: ((aws_access_key_id))
+      #         aws_secret_access_key: ((aws_secret_access_key))
+          # run:
+          #   dir: source/s3mover/lambda
+          #   path: make
+          #   args:
+          #     - deploy
 
   #    - task: functional-tests
-        params:
-          ENV: ((environment))
-          PIPELINE: 1
-          AWS_ACCESS_KEY_ID: ((aws_access_key_id))
-          AWS_SECRET_ACCESS_KEY: ((aws_secret_access_key))
-        config:
-          platform: linux
-          inputs:
-            - name: source
-            - name: settings
-          image_resource:
-            type: docker-image
-            source:
-              repository: 005901988046.dkr.ecr.us-east-1.amazonaws.com:443/concourse-worker
-              tag: latest
-              aws_access_key_id: ((aws_access_key_id))
-              aws_secret_access_key: ((aws_secret_access_key))
-  #        run:
+  #       params:
+  #         ENV: ((environment))
+  #         PIPELINE: 1
+  #         AWS_ACCESS_KEY_ID: ((aws_access_key_id))
+  #         AWS_SECRET_ACCESS_KEY: ((aws_secret_access_key))
+  #       config:
+  #         platform: linux
+  #         inputs:
+  #           - name: source
+  #           - name: settings
+  #         image_resource:
+  #           type: docker-image
+  #           source:
+  #             repository: 005901988046.dkr.ecr.us-east-1.amazonaws.com:443/concourse-worker
+  #             tag: latest
+  #             aws_access_key_id: ((aws_access_key_id))
+  #             aws_secret_access_key: ((aws_secret_access_key))
+  # #        run:
   #          dir: source/s3mover/functional_tests
   #          path: make
   #          args:

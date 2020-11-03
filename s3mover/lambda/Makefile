@@ -1,6 +1,5 @@
-.PHONY: default node_modules build test deploy
-
-default: test build deploy
+.PHONY: default build
+default: build
 
 node_modules: package.json
 	npm install
@@ -8,8 +7,12 @@ node_modules: package.json
 test: node_modules
 	npm test
 
-build: node_modules
-	npx webpack
+#build: node_modules
+#	npx webpack
+
+build:  node_modules
+	npm build
+  
 
 LAMBDAS=$(patsubst dist/%/index.js,%,$(wildcard dist/*/index.js))
 deploy: build
