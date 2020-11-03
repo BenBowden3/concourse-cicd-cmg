@@ -1,4 +1,10 @@
 settings
 *params*.yml
+<<<<<<< HEAD
 *infrastrucuture/plugins/*
 */.terraform/*
+=======
+s3mover/infrastrucuture/.terraform/plugins/darwin_amd64/terraform-provider-aws_v2.70.0_x4
+s3mover/infrastrucuture/.terraform/plugins/darwin_amd64/lock.json
+s3mover/infrastrucuture/.terraform/plugins/darwin_amd64/terraform-provider-archive_v2.0.0_x5
+>>>>>>> 52426fda88dcaf53d5c4efe3f58295c46d80d180
