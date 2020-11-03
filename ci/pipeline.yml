@@ -47,8 +47,6 @@ jobs:
             - name: settings
           outputs:
             - name: settings
-<<<<<<< HEAD
-=======
           image_resource:
             type: docker-image
             source:
@@ -94,7 +92,6 @@ jobs:
           outputs:
             - name: source
             - name: build
->>>>>>> 52426fda88dcaf53d5c4efe3f58295c46d80d180
           image_resource:
             type: docker-image
             source:
@@ -103,7 +100,6 @@ jobs:
               aws_access_key_id: ((aws_access_key_id))
               aws_secret_access_key: ((aws_secret_access_key))
           run:
-<<<<<<< HEAD
             dir: source/kinesisToDynamo/infrastructure
             path: make
 
@@ -111,7 +107,6 @@ jobs:
         params:
           ENV: ((environment))
           PIPELINE: 1
-=======
             dir: source/kinesisToDynamo/lambda
             path: make
             args:
@@ -123,16 +118,12 @@ jobs:
           PIPELINE: 1
           AWS_ACCESS_KEY_ID: ((aws_access_key_id))
           AWS_SECRET_ACCESS_KEY: ((aws_secret_access_key))
->>>>>>> 52426fda88dcaf53d5c4efe3f58295c46d80d180
         config:
           platform: linux
           inputs:
             - name: settings
-<<<<<<< HEAD
-=======
             - name: build
             - name: source
->>>>>>> 52426fda88dcaf53d5c4efe3f58295c46d80d180
           image_resource:
             type: docker-image
             source:
@@ -144,32 +135,23 @@ jobs:
             dir: source/kinesisToDynamo/lambda
             path: make
             args:
-<<<<<<< HEAD
               - test
-=======
               - deploy
->>>>>>> 52426fda88dcaf53d5c4efe3f58295c46d80d180
 
       - task: lambda-build
         params:
           ENV: ((environment))
           PIPELINE: 1
-<<<<<<< HEAD
-=======
           AWS_ACCESS_KEY_ID: ((aws_access_key_id))
           AWS_SECRET_ACCESS_KEY: ((aws_secret_access_key))
->>>>>>> 52426fda88dcaf53d5c4efe3f58295c46d80d180
         config:
           platform: linux
           inputs:
             - name: source
             - name: settings
-<<<<<<< HEAD
           outputs:
             - name: source
             - name: build
-=======
->>>>>>> 52426fda88dcaf53d5c4efe3f58295c46d80d180
           image_resource:
             type: docker-image
             source:
@@ -178,7 +160,6 @@ jobs:
               aws_access_key_id: ((aws_access_key_id))
               aws_secret_access_key: ((aws_secret_access_key))
           run:
-<<<<<<< HEAD
             dir: source/kinesisToDynamo/lambda
             path: make
             args:
@@ -190,7 +171,6 @@ jobs:
           PIPELINE: 1
           AWS_ACCESS_KEY_ID: ((aws_access_key_id))
           AWS_SECRET_ACCESS_KEY: ((aws_secret_access_key))
-=======
             dir: source/kinesisToDynamo/functional_tests
             path: make
             args:
@@ -206,7 +186,6 @@ jobs:
         params:
           ENV: ((environment))
           PIPELINE: 1
->>>>>>> 52426fda88dcaf53d5c4efe3f58295c46d80d180
         config:
           platform: linux
           inputs:
@@ -221,24 +200,18 @@ jobs:
               aws_access_key_id: ((aws_access_key_id))
               aws_secret_access_key: ((aws_secret_access_key))
           run:
-<<<<<<< HEAD
             dir: source/kinesisToDynamo/lambda
             path: make
-            args:
               - deploy
 
       - task: functional-tests
-=======
             dir: source/s3mover
             path: make
-            args:
               - settings
 
       - task: infrastructure-deploy
->>>>>>> 52426fda88dcaf53d5c4efe3f58295c46d80d180
         params:
           ENV: ((environment))
-          PIPELINE: 1
           AWS_ACCESS_KEY_ID: ((aws_access_key_id))
           AWS_SECRET_ACCESS_KEY: ((aws_secret_access_key))
         config:
@@ -246,8 +219,6 @@ jobs:
           inputs:
             - name: source
             - name: settings
-<<<<<<< HEAD
-=======
           outputs:
             - name: settings
           image_resource:
@@ -295,7 +266,6 @@ jobs:
           outputs:
             - name: source
             - name: build
->>>>>>> 52426fda88dcaf53d5c4efe3f58295c46d80d180
           image_resource:
             type: docker-image
             source:
@@ -304,7 +274,6 @@ jobs:
               aws_access_key_id: ((aws_access_key_id))
               aws_secret_access_key: ((aws_secret_access_key))
           run:
-<<<<<<< HEAD
             dir: source/kinesisToDynamo/functional_tests
             path: make
             args:
@@ -326,7 +295,6 @@ jobs:
             - name: source
           outputs:
             - name: settings
-=======
             dir: source/s3mover/lambda
             path: make
             args:
@@ -344,7 +312,6 @@ jobs:
             - name: settings
             - name: build
             - name: source
->>>>>>> 52426fda88dcaf53d5c4efe3f58295c46d80d180
           image_resource:
             type: docker-image
             source:
@@ -353,21 +320,18 @@ jobs:
               aws_access_key_id: ((aws_access_key_id))
               aws_secret_access_key: ((aws_secret_access_key))
           run:
-<<<<<<< HEAD
             dir: source/s3mover
             path: make
       #      args:
       #        - settings
 
       - task: infrastructure-deploy
-=======
             dir: source/s3mover/lambda
             path: make
             args:
               - deploy
 
   #    - task: functional-tests
->>>>>>> 52426fda88dcaf53d5c4efe3f58295c46d80d180
         params:
           ENV: ((environment))
           PIPELINE: 1
@@ -378,11 +342,8 @@ jobs:
           inputs:
             - name: source
             - name: settings
-<<<<<<< HEAD
           outputs:
             - name: settings
-=======
->>>>>>> 52426fda88dcaf53d5c4efe3f58295c46d80d180
           image_resource:
             type: docker-image
             source:
@@ -390,7 +351,6 @@ jobs:
               tag: latest
               aws_access_key_id: ((aws_access_key_id))
               aws_secret_access_key: ((aws_secret_access_key))
-<<<<<<< HEAD
           run:
             dir: source/s3mover/infrastructure
             path: make
@@ -486,9 +446,7 @@ jobs:
   #             aws_access_key_id: ((aws_access_key_id))
   #             aws_secret_access_key: ((aws_secret_access_key))
   # #        run:
-=======
   #        run:
->>>>>>> 52426fda88dcaf53d5c4efe3f58295c46d80d180
   #          dir: source/s3mover/functional_tests
   #          path: make
   #          args:
