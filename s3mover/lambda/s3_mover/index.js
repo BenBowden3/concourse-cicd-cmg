@@ -1,5 +1,6 @@
 // dependencies
 const AWS = require('aws-sdk');
+const { Console } = require('console');
 const util = require('util');
 require('dotenv').config();
 
@@ -23,5 +24,6 @@ exports.handler = async (event, context, callback) => {
         Key : srcKey
      }
     const result = await s3.copyObject(params).promise();
+    Console.log("yeah");
   
 };
