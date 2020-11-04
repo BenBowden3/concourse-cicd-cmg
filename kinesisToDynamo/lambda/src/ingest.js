@@ -22,7 +22,7 @@ async function handler(event) {
         Key,
         Item: Key,
       }
-
+      console.log('testing trigger form code change')
       return docClient.put(params).promise()
     }),
   )
