@@ -37,8 +37,8 @@ infrastructure: settings
 lambda: settings
 	make -C lambda
 
-functional_tests: settings
-	make -C functional_tests
+# functional_tests: settings
+#	make -C functional_tests
 
 destroy:
 	make -C infrastructure destroy
