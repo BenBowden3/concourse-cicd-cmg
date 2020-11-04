@@ -282,8 +282,8 @@ jobs:
           run:
             dir: source/s3mover/infrastructure
             path: make
-            # args:
-            #   - deploy
+            args:
+              - deploy
 
 
  

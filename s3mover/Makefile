@@ -1,6 +1,6 @@
 .PHONY: default settings lambda infrastructure functional_tests destroy
 
-default: check_env settings  lambda infrastructure
+default: check_env setting infrastructure
 
 # Validate that $ENV environment variable is set and that a
 # corresponding file exists in the config directory
